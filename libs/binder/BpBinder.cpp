@@ -48,10 +48,6 @@ uint32_t BpBinder::sBinderProxyCountHighWatermark = 2500;
 // Another arbitrary value a binder count needs to drop below before another callback will be called
 uint32_t BpBinder::sBinderProxyCountLowWatermark = 2000;
 
-// Once the limit has been exceeded, keep calling the limit callback for every this many new proxies
-// created over the limit.
-constexpr uint32_t REPEAT_LIMIT_CALLBACK_INTERVAL = 1000;
-
 enum {
     LIMIT_REACHED_MASK = 0x80000000,        // A flag denoting that the limit has been reached
     COUNTING_VALUE_MASK = 0x7FFFFFFF,       // A mask of the remaining bits for the count value
